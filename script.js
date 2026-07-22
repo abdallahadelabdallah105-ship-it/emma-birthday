@@ -26,9 +26,9 @@ function pad(number) { return String(number).padStart(2, '0'); }
 
 function updateMusicToggle() {
   const isMuted = backgroundMusic.muted;
-  musicToggle.setAttribute('aria-label', isMuted ? 'تشغيل الصوت' : 'كتم الصوت');
+  musicToggle.setAttribute('aria-label', isMuted ? 'Unmute' : 'Mute');
   musicToggle.setAttribute('aria-pressed', String(isMuted));
-  musicToggle.innerHTML = `<span aria-hidden="true">${isMuted ? '🔇' : '🔊'}</span><span>${isMuted ? 'تشغيل الصوت' : 'كتم الصوت'}</span>`;
+  musicToggle.innerHTML = `<span aria-hidden="true">${isMuted ? '🔇' : '🔊'}</span><span>${isMuted ? 'Unmute' : 'Mute'}</span>`;
 }
 
 function startMusic() {
@@ -115,12 +115,19 @@ envelopeButton.addEventListener('click', () => {
 memoriesButton.addEventListener('click', revealGallery);
 
 musicToggle.addEventListener('click', () => {
+  if (backgroundMusic.paused) {
+    backgroundMusic.muted = false;
+    backgroundMusic.play().catch(() => {});
+    updateMusicToggle();
+    return;
+  }
   backgroundMusic.muted = !backgroundMusic.muted;
   updateMusicToggle();
-  startMusic();
 });
 
-document.addEventListener('pointerdown', startMusic, { once: true });
+document.addEventListener('click', (event) => {
+  if (!event.target.closest('#musicToggle')) startMusic();
+});
 backgroundMusic.play().catch(() => {});
 updateMusicToggle();
 
