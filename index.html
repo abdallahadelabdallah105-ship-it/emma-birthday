@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#20142f" />
+    <title>Happy Birthday, Emma!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700&family=Dancing+Script:wght@500;600;700&family=Marhey:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell" id="pageShell" data-view="countdown">
+      <div class="glow glow-one"></div>
+      <div class="glow glow-two"></div>
+      <div class="stars" aria-hidden="true"></div>
+      <div class="confetti-field" aria-hidden="true"></div>
+      <div class="birthday-balloons" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+      <section class="countdown-screen screen is-active" id="countdownScreen" aria-labelledby="countdownTitle">
+        <p class="eyebrow birthday-eyebrow">A little surprise is on the way</p>
+        <h1 class="birthday-title" id="countdownTitle"><span>Happy Birthday</span><b>Emma</b></h1>
+        <p class="countdown-note">Your celebration begins in…</p>
+
+        <div class="countdown" aria-label="Time remaining">
+          <div class="time-card"><strong id="days">00</strong><span>Days</span></div>
+          <div class="time-card"><strong id="hours">00</strong><span>Hours</span></div>
+          <div class="time-card"><strong id="minutes">00</strong><span>Mins</span></div>
+          <div class="time-card"><strong id="seconds">00</strong><span>Secs</span></div>
+        </div>
+
+        <p class="date-label">July 25 · 12:00 AM</p>
+        <span class="scroll-heart birthday-cake" aria-hidden="true">🎂</span>
+      </section>
+
+      <section class="surprise-screen screen" id="surpriseScreen" aria-labelledby="surpriseTitle">
+        <div class="surprise-intro">
+          <p class="eyebrow">make a wish</p>
+          <h1 id="surpriseTitle">A birthday <span>note</span></h1>
+          <p id="instruction">Tap the envelope three times</p>
+        </div>
+
+        <div class="envelope-stage" id="envelopeStage">
+          <button class="envelope-button" id="envelopeButton" type="button" aria-label="Open birthday note" aria-describedby="instruction">
+            <span class="envelope-shadow"></span>
+            <span class="envelope" aria-hidden="true">
+              <span class="envelope-back"></span>
+              <span class="letter">
+                <span class="letter-glow">✦</span>
+                <span class="letter-content">
+                  <span class="letter-message personal-message">كل سنه وانتي طيبه ي ايما حقيقي مع اننا منعرفش بعض من بدري اوي بس احسن من ناس عرفتهم من بدري فعلا تحس كده فيه فايبس بينا مختلفه و <bdi dir="ltr">its a promise</bdi> لو كملنا وهنكمل يعني هكون دايما جنبك</span>
+                </span>
+              </span>
+              <span class="envelope-flap"></span>
+              <span class="envelope-front"></span>
+              <span class="seal">✦</span>
+            </span>
+          </button>
+          <div class="tap-counter" aria-live="polite"><span id="tapCount">0</span><span>/ 3</span></div>
+        </div>
+        <button class="memories-button" id="memoriesButton" type="button" aria-controls="galleryScreen">
+          <span>See our memories</span><b aria-hidden="true">↓</b>
+        </button>
+
+      </section>
+
+      <section class="gallery-screen screen" id="galleryScreen" aria-labelledby="galleryTitle">
+        <div class="gallery-heading">
+          <p class="eyebrow">your birthday reel</p>
+          <h1 id="galleryTitle">Little moments,<br /><span>big joy</span></h1>
+          <p>Scrolls itself, just like a tiny film.</p>
+        </div>
+        <div class="memories-window" aria-label="Birthday memories">
+          <div class="memory-track">
+            <div class="memory-card photo-card"><img src="assets/memories/Snapchat-1688846574.jpg" alt="Memory of Emma" /></div>
+            <div class="memory-card video-card"><video src="assets/memories/9210bbea57a6c1a4b03d8b0023397aa1.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="play">▶</span></div>
+            <div class="memory-card photo-card"><img src="assets/memories/retouch_2026072202360494.jpg" alt="Memory of Emma" /></div>
+            <div class="memory-card video-card"><video src="assets/memories/video-02-compatible.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="play">▶</span></div>
+            <div class="memory-card photo-card" aria-hidden="true"><img src="assets/memories/Snapchat-1688846574.jpg" alt="" /></div>
+            <div class="memory-card video-card" aria-hidden="true"><video src="assets/memories/9210bbea57a6c1a4b03d8b0023397aa1.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="play">▶</span></div>
+            <div class="memory-card photo-card" aria-hidden="true"><img src="assets/memories/retouch_2026072202360494.jpg" alt="" /></div>
+            <div class="memory-card video-card" aria-hidden="true"><video src="assets/memories/video-02-compatible.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="play">▶</span></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <audio id="backgroundMusic" src="assets/audio/birthday-song.m4a" autoplay loop preload="auto"></audio>
+    <button class="music-toggle" id="musicToggle" type="button" aria-label="كتم الصوت" aria-pressed="false">
+      <span aria-hidden="true">🔊</span>
+      <span>كتم الصوت</span>
+    </button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
